@@ -12,7 +12,10 @@ export default function InputTextarea({
 }) {
   return (
     <>
-      <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+      <label
+        className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200"
+        htmlFor={id}
+      >
         {label}
       </label>
 
