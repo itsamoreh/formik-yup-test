@@ -1,6 +1,6 @@
 # Formik + Yup Test
 
-This is just a quick project to test Formik + Yup.
+This is just a quick demo project to test Formik + Yup with custom input components.
 
 ![Screenshot of the running app](screenshot.png)
 
