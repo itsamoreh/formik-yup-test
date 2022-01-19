@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Formik + Yup Test
+
+This is just a quick project to test Formik + Yup.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
