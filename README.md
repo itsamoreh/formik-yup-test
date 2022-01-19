@@ -2,6 +2,8 @@
 
 This is just a quick project to test Formik + Yup.
 
+![Screenshot of the running app](screenshot.png)
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
