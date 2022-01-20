@@ -2,6 +2,7 @@ import * as Yup from "yup";
 
 import InputText from "./InputText";
 import InputTextarea from "./InputTextarea";
+import cn from "classnames";
 import { useFormik } from "formik";
 
 export default function Form() {
@@ -20,8 +21,13 @@ export default function Form() {
         .max(300, "Sorry! Your message must be 300 characters or less.")
         .required("Please enter a message."),
     }),
-    onSubmit: (values) => {
+    validateOnMount: true,
+    onSubmit: async (values, actions) => {
+      await new Promise((resolve) => setTimeout(resolve, 500));
       console.log("SUBMITTED", values);
+      alert("Thanks for submitting the form!");
+      actions.resetForm();
+      actions.validateForm();
     },
   });
 
@@ -135,8 +141,13 @@ export default function Form() {
 
         <div className="flex justify-center mt-6">
           <button
-            className="px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600"
+            className={cn(
+              "px-4 py-2 text-white transition-colors duration-200 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600",
+              !formik.isValid && "opacity-40 cursor-not-allowed",
+              formik.isSubmitting && "cursor-progress"
+            )}
             type="submit"
+            disabled={!formik.isValid}
           >
             Send Message
           </button>
